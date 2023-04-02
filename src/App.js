@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
-import BarChart from "./components/BarChart";
-import { fetchData } from './helpers/fetchData';
+import React from "react";
+import './App.css';
 
-
+import Dashboard from "./components/Dashboard";
 function App() {
-	const [data, setData] = useState({});
-	useEffect(() => {
-		const getData = async () => {
-			const result = await fetchData();
-			setData(result);
-		};
-
-		getData();
 	
-	}, [])
 	return (
 		<div className="App">
-			<BarChart data={data} />
+			<Dashboard/>
 		</div>
 	);
 }

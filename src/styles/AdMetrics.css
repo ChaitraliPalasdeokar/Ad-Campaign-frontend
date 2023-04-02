@@ -1,0 +1,37 @@
+.ad-metrics {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.ad-metrics-header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.ad-metrics-data {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.ad-metrics-item {
+  text-align: center;
+}
+
+.ad-metrics-label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ad-metrics-value {
+  /* display: block; */
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
