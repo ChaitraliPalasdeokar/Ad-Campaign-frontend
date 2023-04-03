@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 import { fetchData } from "../helpers/fetchData";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-const DoughnutChart = () => {
+const DoughnutChart = (props) => {
 	ChartJS.register(ArcElement, Tooltip, Legend);
 	const [data, setData] = useState({});
 
@@ -71,7 +71,7 @@ const DoughnutChart = () => {
 		},
 	};
 
-	return <Doughnut data={chartData} options={chartOptions} />;
+	return <Doughnut {...props} data={chartData} options={chartOptions} />;
 };
 
 export default DoughnutChart;

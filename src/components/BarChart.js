@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from 'chart.js/auto'
 
-const BarChart = ({ data, handleChildClick }) => {
+const BarChart = ({ data, handleChildClick: handleClick }) => {
 	const attributed_revenues_per_source = Object.values(data);
 	const attributed_revenue_numbers_array = attributed_revenues_per_source.map(obj => Object.values(obj)[0]);
 	
@@ -21,7 +21,7 @@ const BarChart = ({ data, handleChildClick }) => {
 	const chartOptions = {
 		responsive: true,
 		onClick: (e, elements) => {
-			handleChildClick(elements[0].index);
+			handleClick(elements[0].index);
 		},
 		plugins: {
 			title: {
@@ -35,7 +35,7 @@ const BarChart = ({ data, handleChildClick }) => {
 		<Bar
 			data={chartData}
 			options={chartOptions}
-			onElementsClick={handleChildClick}
+			onElementsClick={handleClick}
 		/>
 	);
 };

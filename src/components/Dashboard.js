@@ -11,7 +11,7 @@ const Dashboard = () => {
 	const [selectedIndex, setSelectedIndex] = useState(-1);
 	console.log("In app js", selectedIndex);
 
-	const handleChildClick = (index) => {
+	const handleClick = (index) => {
 		setSelectedIndex(index);
 	};
 
@@ -29,18 +29,21 @@ const Dashboard = () => {
 	return (
 		<div>
 			<AdMetrics />
-			<div className="container">
-				<div class="bar-chart-container">
-					<BarChart data={data} handleChildClick={handleChildClick} />
-					<div class="line-chart-container">
-						<LineChart selectedIndex={selectedIndex} />
+			<div class="page-wrapper">
+				<div class="row">
+					<div class="wrapper">
+						<BarChart data={data} handleClick={handleClick} />
 					</div>
-				</div>
-				<div class="bar-chart-container">
-					<div class="doughnut-chart-container">
-						<DoughnutChart />
+					<div class="wrapper">
+						<DoughnutChart style={{ height: "100 %", width: "100%" }} />
 					</div>
-					<div class="clustered-bar-chart-container">
+					<div class="wrapper">
+						<LineChart
+							selectedIndex={selectedIndex}
+							style={{ height: "100 %", width: "100%" }}
+						/>
+					</div>
+					<div class="wrapper">
 						<ClusteredBarChart />
 					</div>
 				</div>

@@ -25,7 +25,7 @@ ChartJS.register(
 	Tooltip,
 	Legend
 );
-const LineChart = ({ selectedIndex }) => {
+const LineChart = (props) => {
 	const [dataset, setDataset] = useState([]);
 	useEffect(() => {
 		const getData = async () => {
@@ -36,30 +36,31 @@ const LineChart = ({ selectedIndex }) => {
 		getData();
 	}, []);
 
-	useEffect(() => {
-		if (selectedIndex >= 0)
-			console.log('in use effect',selectedIndex);
-	}, [selectedIndex]);
+	// TODO: select index and highlight line
+	// useEffect(() => {
+	// 	if (selectedIndex >= 0)
+	// 		console.log('in use effect',selectedIndex);
+	// }, [selectedIndex]);
 	
 	const options = {
 		chart: {
 			zoom: {
 				enabled: true,
-				mode:'x',
+				mode: "x",
 			},
 			pan: {
 				enabled: true,
-				mode:'x',
-			}
+				mode: "x",
+			},
 		},
 		zoom: {
-				enabled: true,
-				mode:'x',
-			},
-			pan: {
-				enabled: true,
-				mode:'x',
-			},
+			enabled: true,
+			mode: "x",
+		},
+		pan: {
+			enabled: true,
+			mode: "x",
+		},
 		response: true,
 		responsive: true,
 		maintainAspectRatio: false,
@@ -72,6 +73,16 @@ const LineChart = ({ selectedIndex }) => {
 						day: "MMM d",
 					},
 				},
+			},
+		},
+		plugins: {
+			legend: {
+				display: true,
+				// position: "right",
+			},
+			title: {
+				display: true,
+				text: "Time series data for Attributed Revenue",
 			},
 		},
 	};
@@ -88,33 +99,19 @@ const LineChart = ({ selectedIndex }) => {
 			datasets.push({
 				label: entry[0],
 				data: formatedDataAccordingToAxes,
-				borderWidth: (context) => {
-					if (context.dataIndex === selectedIndex) {
-						return 9;
-					}
-					return 1;
-				},
 			});
 		});
 		return datasets;
 	}
-	
-	const renderLine = () => {
-		return (<Line
+
+	return (
+		<Line
+			{...props}
 			options={options}
 			data={{
 				datasets: dataset,
 			}}
-		/>)
-	}
-
-	const renderTemp = () => {
-		return <></>;
-	}
-
-	
-	return (
-		selectedIndex ? renderLine() : renderTemp()
+		/>
 	);
 };
 export default LineChart;
