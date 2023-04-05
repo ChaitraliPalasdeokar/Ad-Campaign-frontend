@@ -8,7 +8,7 @@ function AdMetrics() {
 
 	useEffect(() => {
 		const getData = async () => {
-			const result = await fetchData("data");
+			const result = await fetchData("data/metrics");
 			setapiResponse(result);
 		};
 		getData();
@@ -22,15 +22,19 @@ function AdMetrics() {
 			<div className="ad-metrics-data">
 				<div className="ad-metrics-item">
 					<span className="ad-metrics-label">Total Revenue:</span>
-					<span className="ad-metrics-value">1233443</span>
+					<span className="ad-metrics-value">
+						{apiResponse.attributed_revenue}
+					</span>
 				</div>
 				<div className="ad-metrics-item">
 					<span className="ad-metrics-label">Total Conversions:</span>
-					<span className="ad-metrics-value">4444444</span>
+					<span className="ad-metrics-value">
+						{apiResponse.attributed_conversions}
+					</span>
 				</div>
 				<div className="ad-metrics-item">
 					<span className="ad-metrics-label">Total Spend:</span>
-					<span className="ad-metrics-value">4444449</span>
+					<span className="ad-metrics-value">{apiResponse.spends}</span>
 				</div>
 			</div>
 		</div>
