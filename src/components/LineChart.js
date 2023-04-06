@@ -63,7 +63,7 @@ const LineChart = (props) => {
 		},
 		response: true,
 		responsive: true,
-		maintainAspectRatio: false,
+		// maintainAspectRatio: false,
 		scales: {
 			x: {
 				type: "time",

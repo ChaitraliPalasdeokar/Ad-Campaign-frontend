@@ -31,19 +31,20 @@ const Dashboard = () => {
 			<AdMetrics />
 			<div class="page-wrapper">
 				<div class="row">
-					<div class="wrapper">
+					<div class="column">
 						<BarChart data={data} handleClick={handleClick} />
 					</div>
-					<div class="wrapper">
-						<DoughnutChart style={{ height: "100 %", width: "100%" }} />
+					<div class="column">
+						{/* <div class="doughnut"> */}
+							<DoughnutChart />
+						{/* </div> */}
 					</div>
-					<div class="wrapper">
-						<LineChart
-							selectedIndex={selectedIndex}
-							style={{ height: "100 %", width: "100%" }}
-						/>
+				</div>
+				<div class="row">
+					<div class="column">
+						<LineChart selectedIndex={selectedIndex} />
 					</div>
-					<div class="wrapper">
+					<div class="column">
 						<ClusteredBarChart />
 					</div>
 				</div>

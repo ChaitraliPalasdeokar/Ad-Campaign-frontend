@@ -22,6 +22,7 @@ const BarChart = ({ data,  handleClick }) => {
 		responsive: true,
 		onClick: (e, elements) => {
 			handleClick(elements[0].index);
+			
 		},
 		plugins: {
 			title: {
@@ -33,6 +34,7 @@ const BarChart = ({ data,  handleClick }) => {
 
 	return (
 		<Bar
+			// {...style}
 			data={chartData}
 			options={chartOptions}
 			onElementsClick={handleClick}

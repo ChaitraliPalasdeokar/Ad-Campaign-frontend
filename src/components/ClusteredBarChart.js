@@ -4,7 +4,7 @@ import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 
-const ClusteredBarChart = () => {
+const ClusteredBarChart = (props) => {
 
 	const [data, setData] = useState({});
 	const [dataset, setDataset] = useState([]);
@@ -82,6 +82,7 @@ const ClusteredBarChart = () => {
 
 	return (
 		<Bar
+			{...props}
 			data={chartData}
 			options={chartOptions}
 		/>
