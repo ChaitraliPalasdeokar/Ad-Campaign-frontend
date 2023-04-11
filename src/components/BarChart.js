@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from 'chart.js/auto'
 
-const BarChart = ({ data, handleChildClick: handleClick }) => {
+const BarChart = ({ data,  handleClick }) => {
 	const attributed_revenues_per_source = Object.values(data);
 	const attributed_revenue_numbers_array = attributed_revenues_per_source.map(obj => Object.values(obj)[0]);
 	
