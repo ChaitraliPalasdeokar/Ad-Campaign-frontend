@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metrics component should show metrics data 1`] = `
+<div
+  className="ad-metrics"
+>
+  <h2
+    className="ad-metrics-header"
+  >
+    Advertising Metrics from June to November, 2022
+  </h2>
+  <div
+    className="ad-metrics-data"
+  >
+    <div
+      className="ad-metrics-item"
+    >
+      <span
+        className="ad-metrics-label"
+      >
+        Total Revenue:
+      </span>
+      <span
+        className="ad-metrics-value"
+      />
+    </div>
+    <div
+      className="ad-metrics-item"
+    >
+      <span
+        className="ad-metrics-label"
+      >
+        Total Conversions:
+      </span>
+      <span
+        className="ad-metrics-value"
+      />
+    </div>
+    <div
+      className="ad-metrics-item"
+    >
+      <span
+        className="ad-metrics-label"
+      >
+        Total Spend:
+      </span>
+      <span
+        className="ad-metrics-value"
+      />
+    </div>
+  </div>
+</div>
+`;
